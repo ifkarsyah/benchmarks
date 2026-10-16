@@ -8,7 +8,7 @@ Read status:
 
 | Source | Status | What it contains |
 |---|---|---|
-| [TPC-H vs TPC-DS: Benchmarking Modern Distributed SQL Engines (Presto)](https://prestodb.io/blog/2026/01/30/tpc-h-vs-tpc-ds-benchmarking-modern-distributed-sql-engines-presto/) (PrestoDB blog, 30 Jan 2026) | snippet | Compares the two suites as yardsticks for distributed SQL engines. Frames performance as a mix of I/O throughput, CPU efficiency, network shuffle and optimizer quality. Notes the TPC (founded 1988) replaced vendor claims with audited benchmark data, and that benchmarks need fixed schemas so every engine runs the same tables. The snippets cut off before any results or the actual comparison, so those are not summarized. Written by the Presto project, so read it with that in mind. |
+| [TPC-H vs TPC-DS: Benchmarking Modern Distributed SQL Engines (Presto)](https://prestodb.io/blog/2026/01/30/tpc-h-vs-tpc-ds-benchmarking-modern-distributed-sql-engines-presto/) (PrestoDB blog, Saurabh Mahawar of IBM, 30 Jan 2026) | read (PDF print provided by the repo owner; some images did not render) | Introductory explainer on TPC-H and TPC-DS: schemas, query sets, data generation, and the claim that TPC-DS has real-world skew while TPC-H is uniform. No benchmark results. Written by a Presto project author. **Full summary, facts and cautions: [references/presto-tpch-vs-tpcds.md](references/presto-tpch-vs-tpcds.md).** |
 
 ## Related, found while searching (not requested, not read)
 
@@ -16,4 +16,4 @@ Read status:
 
 ## To do
 
-- Read the Presto post and add what it says about the differences between TPC-H and TPC-DS to [tpc-ds.md](tpc-ds.md), whose table is currently from memory. Check each claim against generated TPC-DS data before relying on it.
+- Check the TPC-DS claims in [tpc-ds.md](tpc-ds.md) (table counts, skew) against generated data. The Presto post agrees with them but is a secondary source.
