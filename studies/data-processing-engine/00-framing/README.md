@@ -7,14 +7,20 @@ Phase: 0 (tool-agnostic framing, before any benchmark)
 
 The first attempt at planning a benchmark of Spark, Flink, Polars and DuckDB kept uncovering missing dimensions: category boxing, business value and serving, whether input data sits in object storage or is already loaded, and batch versus stream switching. That means the question was not right yet. This study fixes the question from first principles, before any code, infra or cloud cost.
 
-## Contents
+## Where to start
 
-| File | Purpose |
-|---|---|
-| [model.md](model.md) | What a data processing engine is, the decisions metrics must serve, a cost model, and bounds |
-| [taxonomy.md](taxonomy.md) | Axes of variation and a first placement of the four engines (to verify) |
-| [feasibility.md](feasibility.md) | Gate that runs before any benchmark: can the engine connect X (Postgres, Kafka, API) to Y (OLAP, Kafka topic, ML system, tenant analytics) |
-| [hypotheses.md](hypotheses.md) | Falsifiable predictions the benchmark would test |
+Read in this order. Each file builds on the one before it, and the whole set takes about 20 minutes.
+
+| # | File | Read it to learn | Depends on |
+|---|---|---|---|
+| 1 | [model.md](model.md) | What an engine is, which decisions (D1 to D6) the metrics must serve, and a cost model with bounds. Defines the vocabulary the other files use. | nothing |
+| 2 | [taxonomy.md](taxonomy.md) | The axes engines can differ on, and where each of the four sits today (unverified). | model.md |
+| 3 | [feasibility.md](feasibility.md) | Whether each engine can connect your X (Postgres, Kafka, API) to your Y (OLAP, Kafka topic, ML system, tenant analytics). This is the first gate in practice. | taxonomy.md |
+| 4 | [hypotheses.md](hypotheses.md) | Predictions a benchmark could prove wrong. Read last, since it uses terms from all three above. | all |
+
+Short on time: read the "Findings so far" and "Order of questions" sections below, then [feasibility.md](feasibility.md). That is the part that decides which engines get benchmarked at all.
+
+Reading order is not the same as decision order. You read the model first to learn the terms, but when you act, feasibility comes first: an engine that cannot connect X to Y is out before anything is measured.
 
 ## Findings so far
 
