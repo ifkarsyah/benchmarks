@@ -13,6 +13,7 @@ The first attempt at planning a benchmark of Spark, Flink, Polars and DuckDB kep
 |---|---|
 | [model.md](model.md) | What a data processing engine is, the decisions metrics must serve, a cost model, and bounds |
 | [taxonomy.md](taxonomy.md) | Axes of variation and a first placement of the four engines (to verify) |
+| [feasibility.md](feasibility.md) | Gate that runs before any benchmark: can the engine connect X (Postgres, Kafka, API) to Y (OLAP, Kafka topic, ML system, tenant analytics) |
 | [hypotheses.md](hypotheses.md) | Falsifiable predictions the benchmark would test |
 
 ## Findings so far
@@ -25,7 +26,21 @@ The first attempt at planning a benchmark of Spark, Flink, Polars and DuckDB kep
 
 One earlier claim in the planning conversation was too strong and is corrected here: business users cannot "read DuckDB directly" either. DuckDB is embedded, not a server, so it needs a driver or an application in front of it, like the others.
 
+## Order of questions
+
+The setup is fixed: `X -> engine -> Y`, with X in {Postgres, Kafka, API} and Y in {OLAP store, Kafka topic, ML system, tenant analytics}. So the order is:
+
+1. **Feasibility gate.** Can the engine connect this X to this Y? Graded (native, third-party, custom code, no). See [feasibility.md](feasibility.md).
+2. **Constraint gate.** Which feasible engines meet the hard requirements (freshness, delivery and write semantics, topology, cost, operations)?
+3. **Benchmark the survivors**, on the real pipeline, with read, process and write time reported separately.
+
+This supersedes an earlier suggestion in the planning discussion to stage all data as Parquet first. That suggestion assumed the source could be chosen. Staging is now a topology constraint to decide, not a default.
+
+Not every pair is benchmarked. There are 12 X and Y pairs per engine. Only pairs the user actually runs are tested, and the rest are listed as not tested.
+
 ## Candidate benchmark questions
+
+These run only on pairs and engines that pass the gates above. Q1 to Q4 describe the file-based processing core; where the real source is Postgres or Kafka, the same questions are asked with that source and per-stage timing.
 
 Each one is written to trace to a decision in [model.md](model.md) (D1 to D6). They are candidates, to be cut or edited by the user. Target after review: two to four.
 
