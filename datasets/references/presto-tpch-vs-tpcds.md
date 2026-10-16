@@ -42,12 +42,12 @@ An introductory explainer on TPC-H and TPC-DS for people evaluating distributed 
 
 ## What it adds to the dataset notes
 
-- Corroborates the TPC-DS schema counts and table names (a secondary source, not a check against generated data).
+- Corroborates the TPC-DS schema counts and table names. These are now also checked against generated SF1 data in [tpc-ds.md](../tpc-ds.md).
 - Gives a second statement that TPC-H is uniform and TPC-DS is skewed, which matters for this repo's concern that results may not transfer to skewed real data.
 - Confirms the usual practice of benchmarking at SF100 to SF10000.
 
 ## To verify before citing
 
-- TPC-DS skew: generate data and measure it (the same checks used for TPC-H in [tpc-h.md](../tpc-h.md)).
+- TPC-DS skew: measured at SF1 in [tpc-ds.md](../tpc-ds.md). Seasonality and NULLs are strong, key skew is mild. Larger scales not measured.
 - The query complexity tiers, against the TPC-DS specification.
-- The "24+" versus 24 tables inconsistency, against the specification.
+- The "24+" versus 24 tables inconsistency: resolved. The kit generates 24 tables (plus a metadata table), and the spec's Table 3-2 lists 24.

@@ -16,4 +16,4 @@ Read status:
 
 ## To do
 
-- Check the TPC-DS claims in [tpc-ds.md](tpc-ds.md) (table counts, skew) against generated data. The Presto post agrees with them but is a secondary source.
+- Table counts and skew claims from the Presto post are checked in [tpc-ds.md](tpc-ds.md). Still open there: why query results do not match the shipped answer sets.

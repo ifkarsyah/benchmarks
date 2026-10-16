@@ -5,7 +5,7 @@ Reference notes on the public datasets used by studies in this repo. Learning ma
 | Dataset | Notes | Verified? |
 |---|---|---|
 | TPC-H | [tpc-h.md](tpc-h.md) | schema, row counts, sizes, uniformity and two query answers checked on SF1 |
-| TPC-DS | [tpc-ds.md](tpc-ds.md) | from memory only, with a list of what to verify |
+| TPC-DS | [tpc-ds.md](tpc-ds.md) | tools, schema, row counts (match the spec), data properties and the 99 queries checked at SF1; query results did not match the shipped answer sets (unresolved) |
 
 Further reading: [references.md](references.md).
 
