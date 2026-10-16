@@ -21,6 +21,7 @@ Start here before running anything.
 - [methodology/checklist.md](methodology/checklist.md): the 7-step process for a fair benchmark
 - [methodology/statistics.md](methodology/statistics.md): the statistics a data infrastructure engineer actually needs
 - [methodology/report-template.md](methodology/report-template.md): structure for writing results honestly
+- [methodology/references.md](methodology/references.md): critiques of benchmarking and vendor results to read critically
 
 ## Datasets
 

@@ -7,6 +7,8 @@ Reference notes on the public datasets used by studies in this repo. Learning ma
 | TPC-H | [tpc-h.md](tpc-h.md) | schema, row counts, sizes, uniformity and two query answers checked on SF1 |
 | TPC-DS | [tpc-ds.md](tpc-ds.md) | from memory only, with a list of what to verify |
 
+Further reading: [references.md](references.md).
+
 Note: TPC-H and TPC-DS are two separate benchmarks, there is no "TPC-H-DS".
 
 ## Which to read first
