@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Secrets and cloud state. Never commit these.
+.env
+*.pem
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Large raw artifacts: keep summaries in git, store big dumps elsewhere and link them.
+*.parquet
+*.log.gz
