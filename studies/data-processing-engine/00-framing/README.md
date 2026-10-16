@@ -18,6 +18,8 @@ Read in this order. Each file builds on the one before it, and the whole set tak
 | 3 | [feasibility.md](feasibility.md) | Whether each engine can connect your X (Postgres, Kafka, API) to your Y (OLAP, Kafka topic, ML system, tenant analytics). This is the first gate in practice. | taxonomy.md |
 | 4 | [hypotheses.md](hypotheses.md) | Predictions a benchmark could prove wrong. Read last, since it uses terms from all three above. | all |
 
+Background links, with notes on what each contains, are in [references.md](references.md).
+
 Short on time: read the "Findings so far" and "Order of questions" sections below, then [feasibility.md](feasibility.md). That is the part that decides which engines get benchmarked at all.
 
 Reading order is not the same as decision order. You read the model first to learn the terms, but when you act, feasibility comes first: an engine that cannot connect X to Y is out before anything is measured.
