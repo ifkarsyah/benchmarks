@@ -8,6 +8,7 @@ Everything here is built from public data and my own hardware or cloud account. 
 
 | Study | Question | Status | Conclusion |
 |---|---|---|---|
+| [00-framing](studies/data-processing-engine/00-framing/) | What should a Spark, Flink, Polars and DuckDB comparison ask, from first principles? | draft, awaiting review | |
 | [kafka-vs-redpanda](studies/_template/) | (planned) | not started | |
 | [spark-vs-flink](studies/_template/) | (planned) | not started | |
 | [iceberg-vs-delta](studies/_template/) | (planned) | not started | |
