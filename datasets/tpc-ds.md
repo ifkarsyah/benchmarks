@@ -58,7 +58,7 @@ Like TPC-H: no concurrency by default, no streaming, no real-world skew at scale
 ## To verify before citing
 
 1. Table count (24) and the fact versus dimension split.
-2. Query count and whether variants exist. (A secondary source, the [awesome-olap list](../methodology/references.md), also says 99 queries across fact and dimension tables. That agrees with this file but is not a primary check.)
+2. Query count and whether variants exist. (A secondary source, the [awesome-olap list](../methodology/references/awesome-olap-benchmarks.md), also says 99 queries across fact and dimension tables. That agrees with this file but is not a primary check.)
 3. Row counts and Parquet size at SF1.
 4. How non-uniform the generated data actually is.
 5. The `dsdgen` call above, in an environment where the extension can be downloaded.
