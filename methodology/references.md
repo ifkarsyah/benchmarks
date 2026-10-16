@@ -6,7 +6,7 @@ Read status:
 - **snippet**: only search-result snippets or third-party summaries were seen, not the full page.
 - **unread**: the page could not be fetched and no summary was found. The description is inferred from the title only and may be wrong. Open the link and replace it.
 
-The hosts are blocked from the environment that wrote this file. Only Benchmaxxing was read, from text the repo owner pasted. The others are snippet-level or unread.
+The hosts are blocked from the environment that wrote this file. Benchmaxxing and the awesome-olap page were read from text the repo owner pasted. The others are snippet-level only.
 
 ## Critiques
 
@@ -29,7 +29,19 @@ Why it is here: it is a useful example to critique against [checklist.md](checkl
 
 | Source | Status | What it contains |
 |---|---|---|
-| [awesome-olap: benchmark](https://samber.github.io/awesome-olap/benchmark/) | unread | Title and domain suggest a curated list of OLAP benchmarks. Verify what it lists, and use it as a map to find benchmarks, not as evidence of anything. |
+| [awesome-olap: benchmark](https://samber.github.io/awesome-olap/benchmark/) (samber) | read (text pasted by the repo owner, not fetched) | A short curated list of five OLAP and database benchmarks, with one-line descriptions. Its own advice at the top: run benchmarks on your own data and query patterns, because published numbers reflect vendor-tuned configurations. A map to find benchmarks, not evidence of anything. Entries are listed below. |
+
+### What the awesome-olap page lists
+
+| Benchmark | Description on the page | Relevance here (my reading) |
+|---|---|---|
+| [ClickBench](https://benchmark.clickhouse.com/) | De facto OLAP benchmark maintained by ClickHouse. 43 analytical queries on a "100GB" web analytics dataset, results for 50+ engines. | The model for the framing study's "tags, not leaderboards" approach. The page says 100GB while the ClickBench repo describes about 100 million rows. These are different units (size versus rows), so check which is meant, and whether it is raw or compressed size. |
+| [Jepsen](https://jepsen.io/) | Testing of distributed databases, queues and consensus protocols. | Tests correctness under failure, not performance. Relevant to the failure scenarios in the framing study (what happens when a worker dies), not to speed comparisons. |
+| [TPC-DS](https://www.tpc.org/tpcds/) | Decision support benchmark modeling a retail data warehouse, 99 complex SQL queries across several fact and dimension tables. | Corroborates the 99 queries and the fact/dimension structure in [../datasets/tpc-ds.md](../datasets/tpc-ds.md). It does not confirm the 24 tables. |
+| [TPC-H](https://www.tpc.org/tpch/) | Business intelligence benchmark, 22 ad-hoc queries on supply-chain data. "The most widely cited OLAP benchmark in academic literature." | Matches [../datasets/tpc-h.md](../datasets/tpc-h.md). The "most cited" claim is the list author's and is not checked here. |
+| [TPC family benchmarks](https://www.tpc.org/information/benchmarks5.asp) | Full catalog of TPC benchmarks for big data and analytical databases. | Where to look for benchmarks beyond TPC-H and TPC-DS. |
+
+The page is a secondary source. Confirm any fact above against the primary page before citing it.
 
 ## How to use these
 
@@ -39,6 +51,5 @@ Why it is here: it is a useful example to critique against [checklist.md](checkl
 
 ## To do
 
-- Read the awesome-olap page and replace the "title suggests" text.
 - Read the full QuestDB and ClickHouse posts to confirm the snippet-level claims above, and to check the Benchmaxxing author's account of the ClickBench cold-run skew against the QuestDB original.
 - Verify the third-party claims in the Benchmaxxing summary against the primary posts. The list of claims to verify is in the summary file.
