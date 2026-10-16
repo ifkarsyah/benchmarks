@@ -22,6 +22,10 @@ Start here before running anything.
 - [methodology/statistics.md](methodology/statistics.md): the statistics a data infrastructure engineer actually needs
 - [methodology/report-template.md](methodology/report-template.md): structure for writing results honestly
 
+## Datasets
+
+Reference notes on the public datasets used here: [datasets/](datasets/) (TPC-H, TPC-DS).
+
 ## Shared code
 
 - [common/stats.py](common/stats.py): percentiles, confidence intervals, permutation test, sustainable-rate search
